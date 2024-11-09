@@ -1,5 +1,5 @@
-<template>
-  <!-- Challenge: Rewrite the following HTML using a render function -->
+<!--<template>
+   Challenge: Rewrite the following HTML using a render function
   <h1 v-if="level === 1">
     Hello Frontend Masters!
   </h1>
@@ -18,15 +18,20 @@
   <h6 v-else-if="level === 6">
     Hello Frontend Masters!
   </h6>
-</template>
+</template>-->
 
 <script>
+import { h } from 'vue'
+
 export default {
   props: {
     level: {
-      type: Number,
+      type: String,
       default: 1
     }
+  },
+  render() {
+    return h(`h${this.level}`, 'Hello Frontend Masters!');
   }
 }
 </script>
